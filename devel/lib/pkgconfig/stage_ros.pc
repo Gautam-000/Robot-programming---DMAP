@@ -1,0 +1,8 @@
+prefix=/home/malik/dmap_ws/devel
+
+Name: stage_ros
+Description: Description of stage_ros
+Version: 1.7.5
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

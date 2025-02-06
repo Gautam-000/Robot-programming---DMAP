@@ -1,0 +1,18 @@
+<launch>
+  <arg name="node" default="dmap_localize_node" />
+  <arg name="world_file" default="$(find dmap_live_registration)/config/cappero_laser_odom_diag_obstacle_2020-05-06-16-26-03.world" />
+  <arg name="map_param" default="$(find dmap_live_registration)/config/map.yaml" />
+
+  <node pkg="map_server" type="map_server" name="map_server" output="screen" args="$(arg map_param)"/>
+
+  <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher" output="screen" 
+        args="-4 -13 0 0 0 0 1 odom map 10"/>
+
+  <node pkg="dmap_live_registration" type="$(arg node)" name="$(arg node)" output="screen" args="/base_scan"/>
+
+  <node name="rviz" pkg="rviz" type="rviz" required="true" output="screen"
+            args="-d $(find dmap_live_registration)/config/rviz2.rviz" />
+            
+
+  <node name="teleop" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen" launch-prefix="xterm -e" />
+</launch> 

@@ -1,0 +1,2 @@
+dmap_live_registration:stage_ros
+-DCATKIN_DEVEL_PREFIX=/home/malik/dmap_ws/devel -DCMAKE_INSTALL_PREFIX=/home/malik/dmap_ws/install -G Unix Makefiles

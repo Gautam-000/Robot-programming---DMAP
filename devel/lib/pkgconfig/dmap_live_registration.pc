@@ -1,0 +1,8 @@
+prefix=/home/malik/dmap_ws/devel
+
+Name: dmap_live_registration
+Description: Description of dmap_live_registration
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
