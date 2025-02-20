@@ -12,7 +12,7 @@
 
   <node name="rviz" pkg="rviz" type="rviz" required="true" output="screen"
             args="-d $(find dmap_live_registration)/config/rviz2.rviz" />
-            
+  <node pkg="stage_ros" type="stageros" name="stageros" output="screen" args="$(arg world_file)"/>          
 
   <node name="teleop" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen" launch-prefix="xterm -e" />
 </launch> 
